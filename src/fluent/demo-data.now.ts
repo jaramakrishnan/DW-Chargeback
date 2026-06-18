@@ -72,84 +72,84 @@ const lobCCB = Record({
   $id: Now.ID['lob-ccb'],
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_lob',
-  data: { name: 'CCB', active: true, model_type: 'hybrid', fulfiller_count: 0, charge_model: cmHybrid },
+  data: { name: 'LOB-A', active: true, model_type: 'hybrid', fulfiller_count: 0, charge_model: cmHybrid },
 })
 
 const lobCIB = Record({
   $id: Now.ID['lob-cib'],
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_lob',
-  data: { name: 'CIB', active: true, model_type: 'hybrid', fulfiller_count: 0, charge_model: cmHybrid },
+  data: { name: 'LOB-B', active: true, model_type: 'hybrid', fulfiller_count: 0, charge_model: cmHybrid },
 })
 
 const lobIP = Record({
   $id: Now.ID['lob-ip'],
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_lob',
-  data: { name: 'IP', active: true, model_type: 'hybrid', fulfiller_count: 0, charge_model: cmHybrid },
+  data: { name: 'LOB-C', active: true, model_type: 'hybrid', fulfiller_count: 0, charge_model: cmHybrid },
 })
 
 const lobEP = Record({
   $id: Now.ID['lob-ep'],
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_lob',
-  data: { name: 'EP', active: true, model_type: 'hybrid', fulfiller_count: 0, charge_model: cmHybrid },
+  data: { name: 'LOB-D', active: true, model_type: 'hybrid', fulfiller_count: 0, charge_model: cmHybrid },
 })
 
 const lobCS = Record({
   $id: Now.ID['lob-cs'],
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_lob',
-  data: { name: 'CS', active: true, model_type: 'hybrid', fulfiller_count: 0, charge_model: cmHybrid },
+  data: { name: 'LOB-E', active: true, model_type: 'hybrid', fulfiller_count: 0, charge_model: cmHybrid },
 })
 
 const lobAMDP = Record({
   $id: Now.ID['lob-amdp'],
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_lob',
-  data: { name: 'AMDP', active: true, model_type: 'hybrid', fulfiller_count: 0, charge_model: cmHybrid },
+  data: { name: 'LOB-F', active: true, model_type: 'hybrid', fulfiller_count: 0, charge_model: cmHybrid },
 })
 
 const lobAWM = Record({
   $id: Now.ID['lob-awm'],
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_lob',
-  data: { name: 'AWM', active: true, model_type: 'hybrid', fulfiller_count: 0, charge_model: cmHybrid },
+  data: { name: 'LOB-G', active: true, model_type: 'hybrid', fulfiller_count: 0, charge_model: cmHybrid },
 })
 
 const lobCA = Record({
   $id: Now.ID['lob-ca'],
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_lob',
-  data: { name: 'CA', active: true, model_type: 'hybrid', fulfiller_count: 0, charge_model: cmHybrid },
+  data: { name: 'LOB-H', active: true, model_type: 'hybrid', fulfiller_count: 0, charge_model: cmHybrid },
 })
 
 const lobCAO = Record({
   $id: Now.ID['lob-cao'],
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_lob',
-  data: { name: 'CAO', active: true, model_type: 'hybrid', fulfiller_count: 0, charge_model: cmHybrid },
+  data: { name: 'LOB-I', active: true, model_type: 'hybrid', fulfiller_count: 0, charge_model: cmHybrid },
 })
 
 const lobCB = Record({
   $id: Now.ID['lob-cb'],
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_lob',
-  data: { name: 'CB', active: true, model_type: 'hybrid', fulfiller_count: 0, charge_model: cmHybrid },
+  data: { name: 'LOB-J', active: true, model_type: 'hybrid', fulfiller_count: 0, charge_model: cmHybrid },
 })
 
 const lobCDAO = Record({
   $id: Now.ID['lob-cdao'],
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_lob',
-  data: { name: 'CDAO', active: true, model_type: 'hybrid', fulfiller_count: 0, charge_model: cmHybrid },
+  data: { name: 'LOB-K', active: true, model_type: 'hybrid', fulfiller_count: 0, charge_model: cmHybrid },
 })
 
 const lobCTO = Record({
   $id: Now.ID['lob-cto'],
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_lob',
-  data: { name: 'CTO', active: true, model_type: 'hybrid', fulfiller_count: 0, charge_model: cmHybrid },
+  data: { name: 'CCTO', active: true, model_type: 'hybrid', fulfiller_count: 0, charge_model: cmHybrid },
 })
 
 Record({
@@ -157,8 +157,8 @@ Record({
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_customer',
   data: {
-    name: 'CCB - Consumer Lending', lob: lobCCB, active: true, fulfiller_count: 0, charge_model: cmHybrid,
-    cost_center: 'CC-1001', notes: 'Retail lending portfolio - mortgages and personal loans',
+    name: 'LOB-A Consumer Lending', lob: lobCCB, active: true, fulfiller_count: 0, charge_model: cmHybrid,
+    cost_center: 'CC-1001', notes: 'Retail lending portfolio',
   },
 })
 
@@ -167,8 +167,8 @@ Record({
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_customer',
   data: {
-    name: 'CCB - Mortgage Services', lob: lobCCB, active: true, fulfiller_count: 0, charge_model: cmHeadcount,
-    cost_center: 'CC-1002', notes: 'Home loan processing and underwriting',
+    name: 'LOB-A Mortgage Services', lob: lobCCB, active: true, fulfiller_count: 0, charge_model: cmHeadcount,
+    cost_center: 'CC-1002', notes: 'Loan processing and underwriting',
   },
 })
 
@@ -177,7 +177,7 @@ Record({
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_customer',
   data: {
-    name: 'CCB - Credit Cards', lob: lobCCB, active: true, fulfiller_count: 0, charge_model: cmUsage,
+    name: 'LOB-A Credit Cards', lob: lobCCB, active: true, fulfiller_count: 0, charge_model: cmUsage,
     cost_center: 'CC-1003',
   },
 })
@@ -187,8 +187,8 @@ Record({
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_customer',
   data: {
-    name: 'CIB - Global Markets', lob: lobCIB, active: true, fulfiller_count: 0, charge_model: cmHybrid,
-    cost_center: 'CIB-2001', notes: 'Trading floor operations and market data',
+    name: 'LOB-B Global Markets', lob: lobCIB, active: true, fulfiller_count: 0, charge_model: cmHybrid,
+    cost_center: 'CIB-2001', notes: 'Market operations and data',
   },
 })
 
@@ -197,7 +197,7 @@ Record({
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_customer',
   data: {
-    name: 'CIB - Investment Banking', lob: lobCIB, active: true, fulfiller_count: 0, charge_model: cmHeadcount,
+    name: 'LOB-B Investment Banking', lob: lobCIB, active: true, fulfiller_count: 0, charge_model: cmHeadcount,
     cost_center: 'CIB-2002',
   },
 })
@@ -207,7 +207,7 @@ Record({
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_customer',
   data: {
-    name: 'CIB - Treasury Services', lob: lobCIB, active: true, fulfiller_count: 0, charge_model: cmHybrid,
+    name: 'LOB-B Treasury Services', lob: lobCIB, active: true, fulfiller_count: 0, charge_model: cmHybrid,
     cost_center: 'CIB-2003', notes: 'Cash management and liquidity services',
   },
 })
@@ -217,8 +217,8 @@ Record({
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_customer',
   data: {
-    name: 'IP - Private Banking', lob: lobIP, active: true, fulfiller_count: 0, charge_model: cmHybrid,
-    cost_center: 'IP-3001', notes: 'High net worth client services',
+    name: 'LOB-C Private Banking', lob: lobIP, active: true, fulfiller_count: 0, charge_model: cmHybrid,
+    cost_center: 'IP-3001', notes: 'Client services',
   },
 })
 
@@ -227,7 +227,7 @@ Record({
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_customer',
   data: {
-    name: 'IP - Wealth Advisory', lob: lobIP, active: true, fulfiller_count: 0, charge_model: cmTiered,
+    name: 'LOB-C Wealth Advisory', lob: lobIP, active: true, fulfiller_count: 0, charge_model: cmTiered,
     cost_center: 'IP-3002', tier_package: 'premium', monthly_tier_fee: 250,
   },
 })
@@ -237,8 +237,8 @@ Record({
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_customer',
   data: {
-    name: 'EP - Expense Management', lob: lobEP, active: true, fulfiller_count: 0, charge_model: cmUsage,
-    cost_center: 'EP-4001', notes: 'Corporate expense reporting and approval',
+    name: 'LOB-D Expense Management', lob: lobEP, active: true, fulfiller_count: 0, charge_model: cmUsage,
+    cost_center: 'EP-4001', notes: 'Expense reporting and approval',
   },
 })
 
@@ -247,7 +247,7 @@ Record({
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_customer',
   data: {
-    name: 'EP - Travel & Entertainment', lob: lobEP, active: true, fulfiller_count: 0, charge_model: cmHybrid,
+    name: 'LOB-D Travel & Entertainment', lob: lobEP, active: true, fulfiller_count: 0, charge_model: cmHybrid,
     cost_center: 'EP-4002',
   },
 })
@@ -257,7 +257,7 @@ Record({
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_customer',
   data: {
-    name: 'CS - Retail Operations', lob: lobCS, active: true, fulfiller_count: 0, charge_model: cmHeadcount,
+    name: 'LOB-E Retail Operations', lob: lobCS, active: true, fulfiller_count: 0, charge_model: cmHeadcount,
     cost_center: 'CS-5001',
   },
 })
@@ -267,8 +267,8 @@ Record({
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_customer',
   data: {
-    name: 'CS - Digital Banking', lob: lobCS, active: true, fulfiller_count: 0, charge_model: cmHybrid,
-    cost_center: 'CS-5002', notes: 'Mobile and online banking platforms',
+    name: 'LOB-E Digital Banking', lob: lobCS, active: true, fulfiller_count: 0, charge_model: cmHybrid,
+    cost_center: 'CS-5002', notes: 'Digital banking platforms',
   },
 })
 
@@ -277,7 +277,7 @@ Record({
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_customer',
   data: {
-    name: 'CS - Branch Banking', lob: lobCS, active: true, fulfiller_count: 0, charge_model: cmHybrid,
+    name: 'LOB-E Branch Banking', lob: lobCS, active: true, fulfiller_count: 0, charge_model: cmHybrid,
     cost_center: 'CS-5003',
   },
 })
@@ -287,8 +287,8 @@ Record({
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_customer',
   data: {
-    name: 'AMDP - Asset Management', lob: lobAMDP, active: true, fulfiller_count: 0, charge_model: cmHybrid,
-    cost_center: 'AMDP-6001', notes: 'Institutional asset management operations',
+    name: 'LOB-F Asset Management', lob: lobAMDP, active: true, fulfiller_count: 0, charge_model: cmHybrid,
+    cost_center: 'AMDP-6001', notes: 'Asset management operations',
   },
 })
 
@@ -297,7 +297,7 @@ Record({
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_customer',
   data: {
-    name: 'AMDP - Fund Administration', lob: lobAMDP, active: true, fulfiller_count: 0, charge_model: cmTiered,
+    name: 'LOB-F Fund Administration', lob: lobAMDP, active: true, fulfiller_count: 0, charge_model: cmTiered,
     cost_center: 'AMDP-6002', tier_package: 'standard', monthly_tier_fee: 150,
   },
 })
@@ -307,7 +307,7 @@ Record({
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_customer',
   data: {
-    name: 'AWM - Private Clients', lob: lobAWM, active: true, fulfiller_count: 0, charge_model: cmHybrid,
+    name: 'LOB-G Private Clients', lob: lobAWM, active: true, fulfiller_count: 0, charge_model: cmHybrid,
     cost_center: 'AWM-7001',
   },
 })
@@ -317,9 +317,9 @@ Record({
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_customer',
   data: {
-    name: 'AWM - Family Offices', lob: lobAWM, active: true, fulfiller_count: 0, charge_model: cmTiered,
+    name: 'LOB-G Family Offices', lob: lobAWM, active: true, fulfiller_count: 0, charge_model: cmTiered,
     cost_center: 'AWM-7002', tier_package: 'premium', monthly_tier_fee: 300,
-    notes: 'Ultra high net worth family office services',
+    notes: 'Family office services',
   },
 })
 
@@ -328,7 +328,7 @@ Record({
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_customer',
   data: {
-    name: 'AWM - Portfolio Advisory', lob: lobAWM, active: true, fulfiller_count: 0, charge_model: cmHeadcount,
+    name: 'LOB-G Portfolio Advisory', lob: lobAWM, active: true, fulfiller_count: 0, charge_model: cmHeadcount,
     cost_center: 'AWM-7003',
   },
 })
@@ -338,8 +338,8 @@ Record({
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_customer',
   data: {
-    name: 'CA - Compliance Advisory', lob: lobCA, active: true, fulfiller_count: 0, charge_model: cmHeadcount,
-    cost_center: 'CA-8001', notes: 'Regulatory compliance and advisory services',
+    name: 'LOB-H Compliance Advisory', lob: lobCA, active: true, fulfiller_count: 0, charge_model: cmHeadcount,
+    cost_center: 'CA-8001', notes: 'Compliance and advisory services',
   },
 })
 
@@ -348,7 +348,7 @@ Record({
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_customer',
   data: {
-    name: 'CA - Regulatory Reporting', lob: lobCA, active: true, fulfiller_count: 0, charge_model: cmUsage,
+    name: 'LOB-H Regulatory Reporting', lob: lobCA, active: true, fulfiller_count: 0, charge_model: cmUsage,
     cost_center: 'CA-8002',
   },
 })
@@ -358,7 +358,7 @@ Record({
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_customer',
   data: {
-    name: 'CAO - Chief Architect Office', lob: lobCAO, active: true, fulfiller_count: 0, charge_model: cmHybrid,
+    name: 'LOB-I Chief Architect Office', lob: lobCAO, active: true, fulfiller_count: 0, charge_model: cmHybrid,
     cost_center: 'CAO-9001',
   },
 })
@@ -368,9 +368,9 @@ Record({
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_customer',
   data: {
-    name: 'CAO - Architecture Review', lob: lobCAO, active: true, fulfiller_count: 0, charge_model: cmTiered,
+    name: 'LOB-I Architecture Review', lob: lobCAO, active: true, fulfiller_count: 0, charge_model: cmTiered,
     cost_center: 'CAO-9002', tier_package: 'basic', monthly_tier_fee: 75,
-    notes: 'Enterprise architecture review board',
+    notes: 'Architecture review board',
   },
 })
 
@@ -379,7 +379,7 @@ Record({
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_customer',
   data: {
-    name: 'CB - Community Banking', lob: lobCB, active: true, fulfiller_count: 0, charge_model: cmHybrid,
+    name: 'LOB-J Community Banking', lob: lobCB, active: true, fulfiller_count: 0, charge_model: cmHybrid,
     cost_center: 'CB-10001',
   },
 })
@@ -389,8 +389,8 @@ Record({
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_customer',
   data: {
-    name: 'CB - Business Lending', lob: lobCB, active: true, fulfiller_count: 0, charge_model: cmHeadcount,
-    cost_center: 'CB-10002', notes: 'SMB lending and credit services',
+    name: 'LOB-J Business Lending', lob: lobCB, active: true, fulfiller_count: 0, charge_model: cmHeadcount,
+    cost_center: 'CB-10002', notes: 'Business lending and credit services',
   },
 })
 
@@ -399,7 +399,7 @@ Record({
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_customer',
   data: {
-    name: 'CDAO - Data Governance', lob: lobCDAO, active: true, fulfiller_count: 0, charge_model: cmHeadcount,
+    name: 'LOB-K Data Governance', lob: lobCDAO, active: true, fulfiller_count: 0, charge_model: cmHeadcount,
     cost_center: 'CDAO-11001',
   },
 })
@@ -409,8 +409,8 @@ Record({
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_customer',
   data: {
-    name: 'CDAO - Analytics Platform', lob: lobCDAO, active: true, fulfiller_count: 0, charge_model: cmHybrid,
-    cost_center: 'CDAO-11002', notes: 'Enterprise analytics and BI platform',
+    name: 'LOB-K Analytics Platform', lob: lobCDAO, active: true, fulfiller_count: 0, charge_model: cmHybrid,
+    cost_center: 'CDAO-11002', notes: 'Analytics and BI platform',
   },
 })
 
@@ -419,7 +419,7 @@ Record({
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_customer',
   data: {
-    name: 'CDAO - AI/ML Services', lob: lobCDAO, active: true, fulfiller_count: 0, charge_model: cmTiered,
+    name: 'LOB-K AI/ML Services', lob: lobCDAO, active: true, fulfiller_count: 0, charge_model: cmTiered,
     cost_center: 'CDAO-11003', tier_package: 'premium', monthly_tier_fee: 400,
     notes: 'AI/ML model training and inference platform',
   },
@@ -430,7 +430,7 @@ Record({
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_customer',
   data: {
-    name: 'CTO - Infrastructure Services', lob: lobCTO, active: true, fulfiller_count: 0, charge_model: cmHybrid,
+    name: 'CCTO Infrastructure Services', lob: lobCTO, active: true, fulfiller_count: 0, charge_model: cmHybrid,
     cost_center: 'CTO-12001', notes: 'Cloud infrastructure and data center operations',
   },
 })
@@ -440,7 +440,7 @@ Record({
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_customer',
   data: {
-    name: 'CTO - Platform Engineering', lob: lobCTO, active: true, fulfiller_count: 0, charge_model: cmUsage,
+    name: 'CCTO Platform Engineering', lob: lobCTO, active: true, fulfiller_count: 0, charge_model: cmUsage,
     cost_center: 'CTO-12002',
   },
 })
