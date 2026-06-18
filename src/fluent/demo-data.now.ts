@@ -158,7 +158,7 @@ Record({
   table: 'x_snc_chargeback_customer',
   data: {
     name: 'LOB-A Consumer Lending', lob: lobCCB, active: true, fulfiller_count: 0, charge_model: cmHybrid,
-    cost_center: 'CC-1001', notes: 'Retail lending portfolio',
+    cost_center: 'LOB-A-001', notes: 'Retail lending portfolio',
   },
 })
 
@@ -168,7 +168,7 @@ Record({
   table: 'x_snc_chargeback_customer',
   data: {
     name: 'LOB-A Mortgage Services', lob: lobCCB, active: true, fulfiller_count: 0, charge_model: cmHeadcount,
-    cost_center: 'CC-1002', notes: 'Loan processing and underwriting',
+    cost_center: 'LOB-A-002', notes: 'Loan processing and underwriting',
   },
 })
 
@@ -178,7 +178,7 @@ Record({
   table: 'x_snc_chargeback_customer',
   data: {
     name: 'LOB-A Credit Cards', lob: lobCCB, active: true, fulfiller_count: 0, charge_model: cmUsage,
-    cost_center: 'CC-1003',
+    cost_center: 'LOB-A-003',
   },
 })
 
@@ -188,7 +188,7 @@ Record({
   table: 'x_snc_chargeback_customer',
   data: {
     name: 'LOB-B Global Markets', lob: lobCIB, active: true, fulfiller_count: 0, charge_model: cmHybrid,
-    cost_center: 'CIB-2001', notes: 'Market operations and data',
+    cost_center: 'LOB-B-001', notes: 'Market operations and data',
   },
 })
 
@@ -198,7 +198,7 @@ Record({
   table: 'x_snc_chargeback_customer',
   data: {
     name: 'LOB-B Investment Banking', lob: lobCIB, active: true, fulfiller_count: 0, charge_model: cmHeadcount,
-    cost_center: 'CIB-2002',
+    cost_center: 'LOB-B-002',
   },
 })
 
@@ -208,7 +208,7 @@ Record({
   table: 'x_snc_chargeback_customer',
   data: {
     name: 'LOB-B Treasury Services', lob: lobCIB, active: true, fulfiller_count: 0, charge_model: cmHybrid,
-    cost_center: 'CIB-2003', notes: 'Cash management and liquidity services',
+    cost_center: 'LOB-B-003', notes: 'Cash management and liquidity services',
   },
 })
 
@@ -218,7 +218,7 @@ Record({
   table: 'x_snc_chargeback_customer',
   data: {
     name: 'LOB-C Private Banking', lob: lobIP, active: true, fulfiller_count: 0, charge_model: cmHybrid,
-    cost_center: 'IP-3001', notes: 'Client services',
+    cost_center: 'LOB-C-001', notes: 'Client services',
   },
 })
 
@@ -228,7 +228,7 @@ Record({
   table: 'x_snc_chargeback_customer',
   data: {
     name: 'LOB-C Wealth Advisory', lob: lobIP, active: true, fulfiller_count: 0, charge_model: cmTiered,
-    cost_center: 'IP-3002', tier_package: 'premium', monthly_tier_fee: 250,
+    cost_center: 'LOB-C-002', tier_package: 'premium', monthly_tier_fee: 250,
   },
 })
 
@@ -238,7 +238,7 @@ Record({
   table: 'x_snc_chargeback_customer',
   data: {
     name: 'LOB-D Expense Management', lob: lobEP, active: true, fulfiller_count: 0, charge_model: cmUsage,
-    cost_center: 'EP-4001', notes: 'Expense reporting and approval',
+    cost_center: 'LOB-D-001', notes: 'Expense reporting and approval',
   },
 })
 
@@ -248,7 +248,7 @@ Record({
   table: 'x_snc_chargeback_customer',
   data: {
     name: 'LOB-D Travel & Entertainment', lob: lobEP, active: true, fulfiller_count: 0, charge_model: cmHybrid,
-    cost_center: 'EP-4002',
+    cost_center: 'LOB-D-002',
   },
 })
 
@@ -258,7 +258,7 @@ Record({
   table: 'x_snc_chargeback_customer',
   data: {
     name: 'LOB-E Retail Operations', lob: lobCS, active: true, fulfiller_count: 0, charge_model: cmHeadcount,
-    cost_center: 'CS-5001',
+    cost_center: 'LOB-E-001',
   },
 })
 
@@ -268,7 +268,7 @@ Record({
   table: 'x_snc_chargeback_customer',
   data: {
     name: 'LOB-E Digital Banking', lob: lobCS, active: true, fulfiller_count: 0, charge_model: cmHybrid,
-    cost_center: 'CS-5002', notes: 'Digital banking platforms',
+    cost_center: 'LOB-E-002', notes: 'Digital banking platforms',
   },
 })
 
@@ -278,7 +278,7 @@ Record({
   table: 'x_snc_chargeback_customer',
   data: {
     name: 'LOB-E Branch Banking', lob: lobCS, active: true, fulfiller_count: 0, charge_model: cmHybrid,
-    cost_center: 'CS-5003',
+    cost_center: 'LOB-E-003',
   },
 })
 
@@ -288,7 +288,7 @@ Record({
   table: 'x_snc_chargeback_customer',
   data: {
     name: 'LOB-F Asset Management', lob: lobAMDP, active: true, fulfiller_count: 0, charge_model: cmHybrid,
-    cost_center: 'AMDP-6001', notes: 'Asset management operations',
+    cost_center: 'LOB-F-001', notes: 'Asset management operations',
   },
 })
 
@@ -298,7 +298,7 @@ Record({
   table: 'x_snc_chargeback_customer',
   data: {
     name: 'LOB-F Fund Administration', lob: lobAMDP, active: true, fulfiller_count: 0, charge_model: cmTiered,
-    cost_center: 'AMDP-6002', tier_package: 'standard', monthly_tier_fee: 150,
+    cost_center: 'LOB-F-002', tier_package: 'standard', monthly_tier_fee: 150,
   },
 })
 
@@ -308,7 +308,7 @@ Record({
   table: 'x_snc_chargeback_customer',
   data: {
     name: 'LOB-G Private Clients', lob: lobAWM, active: true, fulfiller_count: 0, charge_model: cmHybrid,
-    cost_center: 'AWM-7001',
+    cost_center: 'LOB-G-001',
   },
 })
 
@@ -318,7 +318,7 @@ Record({
   table: 'x_snc_chargeback_customer',
   data: {
     name: 'LOB-G Family Offices', lob: lobAWM, active: true, fulfiller_count: 0, charge_model: cmTiered,
-    cost_center: 'AWM-7002', tier_package: 'premium', monthly_tier_fee: 300,
+    cost_center: 'LOB-G-002', tier_package: 'premium', monthly_tier_fee: 300,
     notes: 'Family office services',
   },
 })
@@ -329,7 +329,7 @@ Record({
   table: 'x_snc_chargeback_customer',
   data: {
     name: 'LOB-G Portfolio Advisory', lob: lobAWM, active: true, fulfiller_count: 0, charge_model: cmHeadcount,
-    cost_center: 'AWM-7003',
+    cost_center: 'LOB-G-003',
   },
 })
 
@@ -339,7 +339,7 @@ Record({
   table: 'x_snc_chargeback_customer',
   data: {
     name: 'LOB-H Compliance Advisory', lob: lobCA, active: true, fulfiller_count: 0, charge_model: cmHeadcount,
-    cost_center: 'CA-8001', notes: 'Compliance and advisory services',
+    cost_center: 'LOB-H-001', notes: 'Compliance and advisory services',
   },
 })
 
@@ -349,7 +349,7 @@ Record({
   table: 'x_snc_chargeback_customer',
   data: {
     name: 'LOB-H Regulatory Reporting', lob: lobCA, active: true, fulfiller_count: 0, charge_model: cmUsage,
-    cost_center: 'CA-8002',
+    cost_center: 'LOB-H-002',
   },
 })
 
@@ -359,7 +359,7 @@ Record({
   table: 'x_snc_chargeback_customer',
   data: {
     name: 'LOB-I Chief Architect Office', lob: lobCAO, active: true, fulfiller_count: 0, charge_model: cmHybrid,
-    cost_center: 'CAO-9001',
+    cost_center: 'LOB-I-001',
   },
 })
 
@@ -369,7 +369,7 @@ Record({
   table: 'x_snc_chargeback_customer',
   data: {
     name: 'LOB-I Architecture Review', lob: lobCAO, active: true, fulfiller_count: 0, charge_model: cmTiered,
-    cost_center: 'CAO-9002', tier_package: 'basic', monthly_tier_fee: 75,
+    cost_center: 'LOB-I-002', tier_package: 'basic', monthly_tier_fee: 75,
     notes: 'Architecture review board',
   },
 })
@@ -380,7 +380,7 @@ Record({
   table: 'x_snc_chargeback_customer',
   data: {
     name: 'LOB-J Community Banking', lob: lobCB, active: true, fulfiller_count: 0, charge_model: cmHybrid,
-    cost_center: 'CB-10001',
+    cost_center: 'LOB-J-001',
   },
 })
 
@@ -390,7 +390,7 @@ Record({
   table: 'x_snc_chargeback_customer',
   data: {
     name: 'LOB-J Business Lending', lob: lobCB, active: true, fulfiller_count: 0, charge_model: cmHeadcount,
-    cost_center: 'CB-10002', notes: 'Business lending and credit services',
+    cost_center: 'LOB-J-002', notes: 'Business lending and credit services',
   },
 })
 
@@ -400,7 +400,7 @@ Record({
   table: 'x_snc_chargeback_customer',
   data: {
     name: 'LOB-K Data Governance', lob: lobCDAO, active: true, fulfiller_count: 0, charge_model: cmHeadcount,
-    cost_center: 'CDAO-11001',
+    cost_center: 'LOB-K-001',
   },
 })
 
@@ -410,7 +410,7 @@ Record({
   table: 'x_snc_chargeback_customer',
   data: {
     name: 'LOB-K Analytics Platform', lob: lobCDAO, active: true, fulfiller_count: 0, charge_model: cmHybrid,
-    cost_center: 'CDAO-11002', notes: 'Analytics and BI platform',
+    cost_center: 'LOB-K-002', notes: 'Analytics and BI platform',
   },
 })
 
@@ -420,7 +420,7 @@ Record({
   table: 'x_snc_chargeback_customer',
   data: {
     name: 'LOB-K AI/ML Services', lob: lobCDAO, active: true, fulfiller_count: 0, charge_model: cmTiered,
-    cost_center: 'CDAO-11003', tier_package: 'premium', monthly_tier_fee: 400,
+    cost_center: 'LOB-K-003', tier_package: 'premium', monthly_tier_fee: 400,
     notes: 'AI/ML model training and inference platform',
   },
 })
