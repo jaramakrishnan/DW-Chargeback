@@ -1,0 +1,31 @@
+name: Deploy to ServiceNow
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build with frozen keys
+        run: npx now-sdk build --frozenKeys
+
+      - name: Deploy to ServiceNow
+        run: npx now-sdk install
+        env:
+          SN_SDK_NODE_ENV: SN_SDK_CI_INSTALL
+          SN_SDK_AUTH_TYPE: basic
+          SN_SDK_INSTANCE_URL: ${{ secrets.SN_INSTANCE_URL }}
+          SN_SDK_USER: ${{ secrets.SN_USER }}
+          SN_SDK_USER_PWD: ${{ secrets.SN_PASSWORD }}
