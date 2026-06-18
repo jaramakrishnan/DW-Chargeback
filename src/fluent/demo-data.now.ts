@@ -149,7 +149,7 @@ const lobCTO = Record({
   $id: Now.ID['lob-cto'],
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_lob',
-  data: { name: 'CCTO', active: true, model_type: 'hybrid', fulfiller_count: 0, charge_model: cmHybrid },
+  data: { name: 'LOB-L', active: true, model_type: 'hybrid', fulfiller_count: 0, charge_model: cmHybrid },
 })
 
 Record({
@@ -430,8 +430,8 @@ Record({
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_customer',
   data: {
-    name: 'CCTO Infrastructure Services', lob: lobCTO, active: true, fulfiller_count: 0, charge_model: cmHybrid,
-    cost_center: 'CTO-12001', notes: 'Cloud infrastructure and data center operations',
+    name: 'LOB-L Infrastructure Services', lob: lobCTO, active: true, fulfiller_count: 0, charge_model: cmHybrid,
+    cost_center: 'LOB-L-001', notes: 'Cloud infrastructure and data center operations',
   },
 })
 
@@ -440,7 +440,7 @@ Record({
   $meta: { installMethod: 'demo' },
   table: 'x_snc_chargeback_customer',
   data: {
-    name: 'CCTO Platform Engineering', lob: lobCTO, active: true, fulfiller_count: 0, charge_model: cmUsage,
-    cost_center: 'CTO-12002',
+    name: 'LOB-L Platform Engineering', lob: lobCTO, active: true, fulfiller_count: 0, charge_model: cmUsage,
+    cost_center: 'LOB-L-002',
   },
 })
