@@ -46,6 +46,19 @@ Record({
 })
 
 Record({
+  $id: Now.ID['mod-rate-cards'],
+  table: 'sys_app_module',
+  data: {
+    title: 'Rate Cards',
+    application: appMenu,
+    link_type: 'LIST',
+    name: 'x_snc_chargeback_rate_card',
+    active: true,
+    order: 250,
+  },
+})
+
+Record({
   $id: Now.ID['mod-charge-models'],
   table: 'sys_app_module',
   data: {

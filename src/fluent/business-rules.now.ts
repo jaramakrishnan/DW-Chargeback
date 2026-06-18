@@ -1,5 +1,5 @@
 import { BusinessRule } from '@servicenow/sdk/core'
-import { countFulfillers, processCustomer } from '../server/chargeback-utils'
+import { countFulfillers, processCustomer, validateRateCard } from '../server/chargeback-utils'
 
 BusinessRule({
   $id: Now.ID['br-count-fulfillers'],
@@ -19,4 +19,14 @@ BusinessRule({
   action: ['insert', 'update'],
   order: 100,
   script: processCustomer,
+})
+
+BusinessRule({
+  $id: Now.ID['br-rate-card-validate'],
+  name: 'Validate Rate Card',
+  table: 'x_snc_chargeback_rate_card',
+  when: 'before',
+  action: ['insert', 'update'],
+  order: 100,
+  script: validateRateCard,
 })

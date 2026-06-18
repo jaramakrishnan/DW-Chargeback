@@ -102,3 +102,30 @@ export const x_snc_chargeback_customer = Table({
     notes: StringColumn({ label: 'Notes', maxLength: 500 }),
   },
 })
+
+export const x_snc_chargeback_rate_card = Table({
+  name: 'x_snc_chargeback_rate_card',
+  label: 'Rate Card',
+  schema: {
+    month: IntegerColumn({ label: 'Month', mandatory: true }),
+    year: IntegerColumn({ label: 'Year', mandatory: true }),
+    total_platform_cost: DecimalColumn({ label: 'Total Platform Cost', scale: 2, mandatory: true }),
+    fixed_percentage: DecimalColumn({ label: 'Fixed Percentage', scale: 2, default: 70 }),
+    variable_percentage: DecimalColumn({ label: 'Variable Percentage', scale: 2, default: 30 }),
+    fixed_cost_pool: DecimalColumn({ label: 'Fixed Cost Pool', scale: 2, default: 0, readOnly: true }),
+    variable_cost_pool: DecimalColumn({ label: 'Variable Cost Pool', scale: 2, default: 0, readOnly: true }),
+    total_users: IntegerColumn({ label: 'Total Users', default: 0, readOnly: true }),
+    total_transactions: IntegerColumn({ label: 'Total Transactions', default: 0, readOnly: true }),
+    status: StringColumn({
+      label: 'Status',
+      choices: {
+        draft: 'Draft',
+        calculated: 'Calculated',
+        approved: 'Approved',
+        billed: 'Billed',
+      },
+      default: 'draft',
+    }),
+    notes: StringColumn({ label: 'Notes', maxLength: 500 }),
+  },
+})

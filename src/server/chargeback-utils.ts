@@ -1,4 +1,5 @@
 import { GlideRecord } from '@servicenow/glide'
+import { gs } from '@servicenow/glide'
 
 export function countFulfillers(current: any) {
   const lobName = current.getValue('name')
@@ -37,4 +38,30 @@ export function autoPopulateCustomerChargeModel(current: any) {
 export function processCustomer(current: any) {
   countCustomerFulfillers(current)
   autoPopulateCustomerChargeModel(current)
+}
+
+export function validateRateCard(current: any) {
+  const fixed = parseFloat(current.getValue('fixed_percentage'))
+  const variable = parseFloat(current.getValue('variable_percentage'))
+
+  if (fixed + variable !== 100) {
+    current.setAbortAction(true)
+    gs.addErrorMessage('Fixed + Variable percentage must equal 100')
+    return
+  }
+
+  const totalCost = parseFloat(current.getValue('total_platform_cost'))
+  current.setValue('fixed_cost_pool', (totalCost * fixed) / 100)
+  current.setValue('variable_cost_pool', (totalCost * variable) / 100)
+
+  if (current.isNewRecord()) {
+    const gr = new GlideRecord('x_snc_chargeback_rate_card')
+    gr.addQuery('month', current.getValue('month'))
+    gr.addQuery('year', current.getValue('year'))
+    gr.query()
+    if (gr.getRowCount() > 0) {
+      current.setAbortAction(true)
+      gs.addErrorMessage('A Rate Card for this month and year already exists')
+    }
+  }
 }

@@ -27,6 +27,10 @@ declare global {
                         table: 'sys_script'
                         id: '004609302d4944c9aa94c61206ea5666'
                     }
+                    'br-rate-card-validate': {
+                        table: 'sys_script'
+                        id: '4e97de9dac964342b7864c2215f2f6f1'
+                    }
                     'cm-headcount': {
                         table: 'x_snc_chargeback_charge_model'
                         id: 'c9d1da34d2864cfdb46e109800acefd0'
@@ -228,6 +232,10 @@ declare global {
                         table: 'sys_app_module'
                         id: 'cdc9736e49b24890968b5f778e7ca42e'
                     }
+                    'mod-rate-cards': {
+                        table: 'sys_app_module'
+                        id: '5b46ed044e224a3f9c3f6875c4808894'
+                    }
                     'module-lobs': {
                         table: 'sys_app_module'
                         id: 'ab87a12070cb4ef5b7495e9f83288762'
@@ -248,6 +256,14 @@ declare global {
                     }
                 }
                 composite: [
+                    {
+                        table: 'sys_dictionary'
+                        id: '0168318cc4674cc2ab045dd1b846297c'
+                        key: {
+                            name: 'x_snc_chargeback_rate_card'
+                            element: 'total_users'
+                        }
+                    },
                     {
                         table: 'sys_documentation'
                         id: '021b9c86a1a547aa975f4635c7853a7e'
@@ -327,6 +343,14 @@ declare global {
                                 }
                             }
                             field: 'tier_package'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '089d48bda5984091bc5170a4201d6680'
+                        key: {
+                            name: 'x_snc_chargeback_rate_card'
+                            element: 'total_transactions'
                         }
                     },
                     {
@@ -499,6 +523,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '1c56d33c810c40e099209aedd72b68f7'
+                        key: {
+                            name: 'x_snc_chargeback_rate_card'
+                            element: 'NULL'
+                        }
+                    },
+                    {
                         table: 'sys_ui_policy_action'
                         id: '1ce3d3cdaee94ebd95047d06f8eecba1'
                         key: {
@@ -535,6 +567,14 @@ declare global {
                         key: {
                             name: 'x_snc_chargeback_charge_model'
                             element: 'formula'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '2496ef1dba8a4b529731080adee19aa3'
+                        key: {
+                            name: 'x_snc_chargeback_rate_card'
+                            element: 'month'
                         }
                     },
                     {
@@ -588,6 +628,15 @@ declare global {
                             name: 'x_snc_chargeback_lob'
                             element: 'model_type'
                             value: 'tiered'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '2c31bd0be173485d813fde93546d4723'
+                        key: {
+                            name: 'x_snc_chargeback_rate_card'
+                            element: 'notes'
+                            language: 'en'
                         }
                     },
                     {
@@ -728,6 +777,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '49e01be198884020bcda50763d632a8c'
+                        key: {
+                            name: 'x_snc_chargeback_rate_card'
+                            element: 'variable_percentage'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '4f78b6f96cd64a4a90eea976c8b515e0'
                         key: {
@@ -765,6 +822,13 @@ declare global {
                         key: {
                             name: 'x_snc_chargeback_customer'
                             element: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'ua_table_licensing_config'
+                        id: '58d97c4386794668b0f25a81d21dfe21'
+                        key: {
+                            name: 'x_snc_chargeback_rate_card'
                         }
                     },
                     {
@@ -822,6 +886,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '653b318d1ce644febfcda0a4c9afd546'
+                        key: {
+                            name: 'x_snc_chargeback_rate_card'
+                            element: 'total_transactions'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '6599c7ea17f2488ba08ef6b0328d70e5'
+                        key: {
+                            name: 'x_snc_chargeback_rate_card'
+                            element: 'fixed_percentage'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '65a0ab286f374e869e516e826ad9a4ad'
                         key: {
@@ -862,6 +943,15 @@ declare global {
                     },
                     {
                         table: 'sys_documentation'
+                        id: '6a1630c326b24f36835eaff169ed76ef'
+                        key: {
+                            name: 'x_snc_chargeback_rate_card'
+                            element: 'month'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
                         id: '6b6f950b56a646cc8df9d8d2af372757'
                         key: {
                             name: 'x_snc_chargeback_charge_model'
@@ -898,6 +988,14 @@ declare global {
                                 }
                             }
                             sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '716dd42c66604b749b59f0220ed7a66d'
+                        key: {
+                            name: 'x_snc_chargeback_rate_card'
+                            element: 'total_platform_cost'
                         }
                     },
                     {
@@ -1005,6 +1103,15 @@ declare global {
                     },
                     {
                         table: 'sys_documentation'
+                        id: '8677201d1f1e41a69263ea3329dc8635'
+                        key: {
+                            name: 'x_snc_chargeback_rate_card'
+                            element: 'NULL'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
                         id: '8891948a2aca48f7a0ffac3106559604'
                         key: {
                             name: 'x_snc_chargeback_customer'
@@ -1039,12 +1146,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '94496dae7eb243199204c81b30151a50'
+                        key: {
+                            name: 'x_snc_chargeback_rate_card'
+                            element: 'year'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '955ee41e752447e7a44b03adc9f759bb'
                         key: {
                             name: 'x_snc_chargeback_lob'
                             element: 'parent_lob'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '96871f397426404f8812bea9cc648886'
+                        key: {
+                            name: 'x_snc_chargeback_rate_card'
+                            element: 'status'
                         }
                     },
                     {
@@ -1070,6 +1193,24 @@ declare global {
                         key: {
                             name: 'x_snc_chargeback_charge_model'
                             element: 'sort_order'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '9c11a492a1c64e6cb31ea5d8706165d0'
+                        key: {
+                            name: 'x_snc_chargeback_rate_card'
+                            element: 'variable_cost_pool'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '9c7dc0d70abe475fa6f630e33f9414fd'
+                        key: {
+                            name: 'x_snc_chargeback_rate_card'
+                            element: 'fixed_cost_pool'
                             language: 'en'
                         }
                     },
@@ -1102,6 +1243,14 @@ declare global {
                             }
                             element: 'active'
                             position: '6'
+                        }
+                    },
+                    {
+                        table: 'sys_choice_set'
+                        id: 'a37573010c7248e1ad0e32487d7dce41'
+                        key: {
+                            name: 'x_snc_chargeback_rate_card'
+                            element: 'status'
                         }
                     },
                     {
@@ -1186,6 +1335,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'b4f5470edb9d4a7d9dab4d3c35bc5ef5'
+                        key: {
+                            name: 'x_snc_chargeback_rate_card'
+                            element: 'fixed_percentage'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: 'b56dace48f904f19a9600afe373157d7'
                         key: {
@@ -1205,6 +1363,23 @@ declare global {
                             }
                             element: 'lob'
                             position: '2'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'b6754d48cbf54fe3a656cb5554a292eb'
+                        key: {
+                            name: 'x_snc_chargeback_rate_card'
+                            element: 'year'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'b73e4cc5b72749f9b83fb18c242de744'
+                        key: {
+                            name: 'x_snc_chargeback_rate_card'
+                            element: 'variable_cost_pool'
                         }
                     },
                     {
@@ -1347,6 +1522,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'cbd319a8efad40769bad6765d557e78a'
+                        key: {
+                            name: 'x_snc_chargeback_rate_card'
+                            element: 'total_users'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'cc7472535ca04dabb74bc2e5287962c7'
                         key: {
@@ -1425,6 +1609,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'd2340b56286e41e0b7bbe687d283ac51'
+                        key: {
+                            name: 'x_snc_chargeback_rate_card'
+                            element: 'total_platform_cost'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'd25385ffd57f4310a6e65fced8f35595'
                         key: {
@@ -1473,6 +1666,23 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: 'd6c59d8d33044acb9f32f474862975d0'
+                        key: {
+                            name: 'x_snc_chargeback_rate_card'
+                            element: 'fixed_cost_pool'
+                        }
+                    },
+                    {
+                        table: 'sys_choice'
+                        id: 'd88572b0b97d4be1b2418c407474ff32'
+                        key: {
+                            name: 'x_snc_chargeback_rate_card'
+                            element: 'status'
+                            value: 'billed'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: 'd9f4be0257b84fd7a7206714341f2ec7'
                         key: {
                             name: 'x_snc_chargeback_charge_model'
@@ -1499,6 +1709,15 @@ declare global {
                             }
                             element: 'notes'
                             position: '5'
+                        }
+                    },
+                    {
+                        table: 'sys_choice'
+                        id: 'de2afc96d32740d48eda305d037b6020'
+                        key: {
+                            name: 'x_snc_chargeback_rate_card'
+                            element: 'status'
+                            value: 'draft'
                         }
                     },
                     {
@@ -1530,6 +1749,14 @@ declare global {
                             name: 'x_snc_chargeback_customer'
                             element: 'cost_center'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'e3b1ccbd6ca8492bb7ffcb775778649f'
+                        key: {
+                            name: 'x_snc_chargeback_rate_card'
+                            element: 'notes'
                         }
                     },
                     {
@@ -1577,6 +1804,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_choice'
+                        id: 'e6f489debd684b9e851af4b51e79f415'
+                        key: {
+                            name: 'x_snc_chargeback_rate_card'
+                            element: 'status'
+                            value: 'calculated'
+                        }
+                    },
+                    {
                         table: 'sys_choice_set'
                         id: 'e7d494538ad2451c850c520a604ae855'
                         key: {
@@ -1590,6 +1826,13 @@ declare global {
                         key: {
                             name: 'x_snc_chargeback_lob'
                             element: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_db_object'
+                        id: 'eabaaf29f694442589f412e1b1d87f3c'
+                        key: {
+                            name: 'x_snc_chargeback_rate_card'
                         }
                     },
                     {
@@ -1669,6 +1912,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'f2c4cbcc63a34008a40655d4ad0550d3'
+                        key: {
+                            name: 'x_snc_chargeback_rate_card'
+                            element: 'status'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'f42baef90afd430892a819b4043554e4'
                         key: {
@@ -1677,11 +1929,29 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'fafd89cc18eb4f529ca378fae82f1f41'
+                        key: {
+                            name: 'x_snc_chargeback_rate_card'
+                            element: 'variable_percentage'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'feca4d496b624e60b656f89afcd1116a'
                         key: {
                             name: 'x_snc_chargeback_lob'
                             element: 'charge_model'
+                        }
+                    },
+                    {
+                        table: 'sys_choice'
+                        id: 'ffcd79995bef4b19997fb6d9323d1654'
+                        key: {
+                            name: 'x_snc_chargeback_rate_card'
+                            element: 'status'
+                            value: 'approved'
                         }
                     },
                 ]
