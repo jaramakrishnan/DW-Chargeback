@@ -1,0 +1,7 @@
+import './customer'
+import './license_type'
+import './rate_card'
+import './license_allocation'
+import './chargeback_run'
+import './invoice_line'
+import './onboarding_request'

@@ -1,5 +1,6 @@
 {
-    "scope": "x_snc_chargeback",
-    "scopeId": "744f38faddd24060b76cf0f366e14a50",
-    "name": "DW Chargeback"
+  "scope": "x_snc_chargeback",
+  "scopeId": "47e3cfc639194d919e4bb3087f79778f",
+  "name": "Customer Chargeback",
+  "tsconfigPath": "./src/server/tsconfig.json"
 }
