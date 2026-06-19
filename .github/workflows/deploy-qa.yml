@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Release version to deploy (e.g. v1.0.0)'
+        description: 'Release version to deploy (e.g. v1.0.2)'
         required: true
         type: string
 
@@ -16,6 +16,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.version }}
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -23,22 +26,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Download release artifact
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh release download "${{ github.event.inputs.version }}" \
-            --pattern "*.zip" \
-            --dir ./download
+      - name: Build app
+        run: npx now-sdk build
 
-      - name: Extract and install to QA
-        run: |
-          ZIP=$(ls ./download/*.zip 2>/dev/null | head -1)
-          if [ -z "$ZIP" ]; then
-            echo "No zip downloaded"; exit 1
-          fi
-          unzip -o "$ZIP" -d ./qa_app
-          npx now-sdk install --source ./qa_app
+      - name: Deploy to QA
+        run: npx now-sdk install
         env:
           SN_SDK_NODE_ENV: SN_SDK_CI_INSTALL
           SN_SDK_AUTH_TYPE: oauth
