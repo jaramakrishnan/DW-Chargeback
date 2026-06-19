@@ -1,0 +1,35 @@
+name: Publish Release
+
+on:
+  push:
+    tags: ['v*']
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build app
+        run: npx now-sdk build
+
+      - name: Package app
+        run: npx now-sdk pack
+
+      - name: Upload to GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ZIP=$(ls build/*.zip 2>/dev/null | head -1)
+          if [ -z "$ZIP" ]; then
+            echo "No zip found in build/"; exit 1
+          fi
+          gh release create "$GITHUB_REF_NAME" "$ZIP" \
+            --title "$GITHUB_REF_NAME" \
+            --generate-notes
