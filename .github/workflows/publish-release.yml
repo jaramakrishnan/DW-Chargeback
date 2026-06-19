@@ -26,9 +26,9 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          ZIP=$(ls build/*.zip 2>/dev/null | head -1)
+          ZIP=$(ls target/*.zip 2>/dev/null | head -1)
           if [ -z "$ZIP" ]; then
-            echo "No zip found in build/"; exit 1
+            echo "No zip found in target/"; exit 1
           fi
           gh release create "$GITHUB_REF_NAME" "$ZIP" \
             --title "$GITHUB_REF_NAME" \
