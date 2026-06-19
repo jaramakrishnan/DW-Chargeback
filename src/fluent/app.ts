@@ -56,7 +56,7 @@ Property({
 })
 
 ApplicationMenu({
-    title: 'Customer Chargeback',
+    title: 'DW Chargeback',
     roles: ['x_snc_chargeback.admin', 'x_snc_chargeback.billing_manager', 'x_snc_chargeback.analyst', 'x_snc_chargeback.onboarding_specialist'],
     order: 100,
     active: true,
