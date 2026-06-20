@@ -181,9 +181,14 @@ declare global {
                         table: 'sys_scope_privilege'
                         id: '6007baa665a54b50bbefd3e4134bf933'
                     }
+                    'mod-charge-models': {
+                        table: 'sys_app_module'
+                        id: '558ef164bc724461a08698b8e4bdc50f'
+                    }
                     'mod-chargeback-runs': {
                         table: 'sys_app_module'
                         id: 'bd1b1ac54e3d4d6f9a2736746c66588e'
+                        deleted: true
                     }
                     'mod-customers': {
                         table: 'sys_app_module'
@@ -192,18 +197,26 @@ declare global {
                     'mod-invoices': {
                         table: 'sys_app_module'
                         id: '8adecbdd2bf646d39a191efd34ab51b2'
+                        deleted: true
                     }
                     'mod-license-allocations': {
                         table: 'sys_app_module'
                         id: 'defa69ecc6a74fc09823f7b0c0a43f0d'
+                        deleted: true
                     }
                     'mod-license-types': {
                         table: 'sys_app_module'
                         id: 'ca62a892781440159f19dbbbd623da28'
+                        deleted: true
+                    }
+                    'mod-lobs': {
+                        table: 'sys_app_module'
+                        id: 'b4e284c0e53b4748b74294a3985ee09f'
                     }
                     'mod-onboarding': {
                         table: 'sys_app_module'
                         id: '8965fa995dc24f6c8a09f96cd2c4cc1b'
+                        deleted: true
                     }
                     'mod-rate-cards': {
                         table: 'sys_app_module'

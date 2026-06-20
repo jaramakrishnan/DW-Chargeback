@@ -70,6 +70,19 @@ const appMenu = ApplicationMenu({
 })
 
 Record({
+    $id: 'mod-lobs',
+    table: 'sys_app_module',
+    data: {
+        title: 'LOBs',
+        application: appMenu,
+        link_type: 'LIST',
+        name: 'x_snc_chargeback_lob',
+        active: true,
+        order: 100,
+    },
+})
+
+Record({
     $id: 'mod-customers',
     table: 'sys_app_module',
     data: {
@@ -78,7 +91,7 @@ Record({
         link_type: 'LIST',
         name: 'x_snc_chargeback_customer',
         active: true,
-        order: 100,
+        order: 200,
     },
 })
 
@@ -91,72 +104,20 @@ Record({
         link_type: 'LIST',
         name: 'x_snc_chargeback_rate_card',
         active: true,
-        order: 200,
-    },
-})
-
-Record({
-    $id: 'mod-license-types',
-    table: 'sys_app_module',
-    data: {
-        title: 'License Types',
-        application: appMenu,
-        link_type: 'LIST',
-        name: 'x_snc_chargeback_license_type',
-        active: true,
         order: 300,
     },
 })
 
 Record({
-    $id: 'mod-license-allocations',
+    $id: 'mod-charge-models',
     table: 'sys_app_module',
     data: {
-        title: 'License Allocations',
+        title: 'Charge Models',
         application: appMenu,
         link_type: 'LIST',
-        name: 'x_snc_chargeback_license_allocation',
+        name: 'x_snc_chargeback_charge_model',
         active: true,
         order: 400,
-    },
-})
-
-Record({
-    $id: 'mod-chargeback-runs',
-    table: 'sys_app_module',
-    data: {
-        title: 'Chargeback Runs',
-        application: appMenu,
-        link_type: 'LIST',
-        name: 'x_snc_chargeback_chargeback_run',
-        active: true,
-        order: 500,
-    },
-})
-
-Record({
-    $id: 'mod-invoices',
-    table: 'sys_app_module',
-    data: {
-        title: 'Invoice Lines',
-        application: appMenu,
-        link_type: 'LIST',
-        name: 'x_snc_chargeback_invoice_line',
-        active: true,
-        order: 600,
-    },
-})
-
-Record({
-    $id: 'mod-onboarding',
-    table: 'sys_app_module',
-    data: {
-        title: 'Onboarding Requests',
-        application: appMenu,
-        link_type: 'LIST',
-        name: 'x_snc_chargeback_onboarding_request',
-        active: true,
-        order: 700,
     },
 })
 
