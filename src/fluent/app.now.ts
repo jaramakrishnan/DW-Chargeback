@@ -1,4 +1,5 @@
 import { ApplicationMenu, Role, Property, CrossScopePrivilege } from '@servicenow/sdk/core'
+import '@servicenow/sdk/global'
 
 Role({
     name: 'x_snc_chargeback.admin',
@@ -26,36 +27,42 @@ Role({
 })
 
 Property({
+    $id: 'prop-default-currency',
     name: 'x_snc_chargeback.default_currency',
     value: 'USD',
     description: 'Default currency for all chargeback calculations',
 })
 
 Property({
+    $id: 'prop-billing-cycle',
     name: 'x_snc_chargeback.billing_cycle',
     value: 'monthly',
     description: 'Default billing cycle: monthly, quarterly, annual',
 })
 
 Property({
+    $id: 'prop-grace-period',
     name: 'x_snc_chargeback.grace_period_days',
     value: 30,
     description: 'Grace period in days for new customers before first chargeback',
 })
 
 Property({
+    $id: 'prop-min-commit',
     name: 'x_snc_chargeback.min_commit_months',
     value: 12,
     description: 'Minimum commitment period in months for new customers',
 })
 
 Property({
+    $id: 'prop-notif-email',
     name: 'x_snc_chargeback.notification_email',
     value: 'platform-team@company.com',
     description: 'Email address for chargeback notifications',
 })
 
 ApplicationMenu({
+    $id: 'app-menu',
     title: 'DW Chargeback',
     roles: ['x_snc_chargeback.admin', 'x_snc_chargeback.billing_manager', 'x_snc_chargeback.analyst', 'x_snc_chargeback.onboarding_specialist'],
     order: 100,
@@ -63,6 +70,7 @@ ApplicationMenu({
 })
 
 CrossScopePrivilege({
+    $id: 'csp-sys-user',
     targetScope: 'global',
     targetType: 'sys_db_object',
     targetName: 'sys_user',
@@ -71,6 +79,7 @@ CrossScopePrivilege({
 })
 
 CrossScopePrivilege({
+    $id: 'csp-sys-group',
     targetScope: 'global',
     targetType: 'sys_db_object',
     targetName: 'sys_user_group',
@@ -79,6 +88,7 @@ CrossScopePrivilege({
 })
 
 CrossScopePrivilege({
+    $id: 'csp-sys-choice',
     targetScope: 'global',
     targetType: 'sys_db_object',
     targetName: 'sys_choice',

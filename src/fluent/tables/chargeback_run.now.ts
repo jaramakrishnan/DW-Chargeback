@@ -1,6 +1,6 @@
 import { Table, StringColumn, ChoiceColumn, DateColumn, DateTimeColumn, DecimalColumn, IntegerColumn } from '@servicenow/sdk/core'
 
-Table({
+export const x_snc_chargeback_chargeback_run = Table({
     name: 'x_snc_chargeback_chargeback_run',
     label: 'Chargeback Run',
     display: 'name',

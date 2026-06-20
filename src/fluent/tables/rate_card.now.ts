@@ -1,6 +1,6 @@
 import { Table, StringColumn, ReferenceColumn, DecimalColumn, DateColumn, BooleanColumn } from '@servicenow/sdk/core'
 
-Table({
+export const x_snc_chargeback_rate_card = Table({
     name: 'x_snc_chargeback_rate_card',
     label: 'Rate Card',
     display: 'name',

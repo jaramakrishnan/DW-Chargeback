@@ -2,39 +2,41 @@ import { BusinessRule, Acl } from '@servicenow/sdk/core'
 import '@servicenow/sdk/global'
 
 BusinessRule({
+    $id: 'br-validate-contract-dates',
     table: 'x_snc_chargeback_customer',
     name: 'Validate Customer Contract Dates',
     order: 100,
     active: true,
     when: 'before',
     action: ['insert', 'update'],
-    script: (current: any, previous: any) => {
-        if (current.getValue('contract_end_date') &&
-            current.getValue('contract_start_date') &&
-            current.getValue('contract_end_date') < current.getValue('contract_start_date')) {
+    script: `
+        if (current.contract_end_date &&
+            current.contract_start_date &&
+            current.contract_end_date < current.contract_start_date) {
             gs.addErrorMessage('Contract end date must be after start date');
             current.setAbortAction(true);
             return;
         }
 
-        if (current.getValue('termination_date') &&
-            current.getValue('contract_start_date') &&
-            current.getValue('termination_date') < current.getValue('contract_start_date')) {
+        if (current.termination_date &&
+            current.contract_start_date &&
+            current.termination_date < current.contract_start_date) {
             gs.addErrorMessage('Termination date must be after contract start date');
             current.setAbortAction(true);
             return;
         }
-    },
+    `,
 })
 
 BusinessRule({
+    $id: 'br-validate-rate-price',
     table: 'x_snc_chargeback_rate_card',
     name: 'Validate Rate Card Price',
     order: 100,
     active: true,
     when: 'before',
     action: ['insert', 'update'],
-    script: (current: any, previous: any) => {
+    script: `
         var price = parseFloat(current.getValue('unit_price'));
         if (isNaN(price) || price < 0) {
             gs.addErrorMessage('Unit price must be a positive number');
@@ -51,17 +53,18 @@ BusinessRule({
             var custName = current.getDisplayValue('customer') || 'Default';
             current.setValue('name', 'Rate - ' + ltName + ' - ' + custName);
         }
-    },
+    `,
 })
 
 BusinessRule({
+    $id: 'br-validate-license-allocation',
     table: 'x_snc_chargeback_license_allocation',
     name: 'Validate License Allocation',
     order: 100,
     active: true,
     when: 'before',
     action: ['insert', 'update'],
-    script: (current: any, previous: any) => {
+    script: `
         var count = parseInt(current.getValue('allocated_count'), 10);
         if (isNaN(count) || count < 0) {
             gs.addErrorMessage('Allocated count must be a non-negative number');
@@ -84,17 +87,18 @@ BusinessRule({
             var ltName = current.getDisplayValue('license_type');
             current.setValue('name', 'ALLO - ' + custName + ' - ' + ltName);
         }
-    },
+    `,
 })
 
 BusinessRule({
+    $id: 'br-calc-invoice-totals',
     table: 'x_snc_chargeback_invoice_line',
     name: 'Calculate Invoice Line Totals',
     order: 100,
     active: true,
     when: 'before',
     action: ['insert', 'update'],
-    script: (current: any, previous: any) => {
+    script: `
         var count = parseFloat(current.getValue('license_count')) || 0;
         var price = parseFloat(current.getValue('unit_price')) || 0;
         var discount = parseInt(current.getValue('discount_percent'), 10) || 0;
@@ -106,26 +110,28 @@ BusinessRule({
         current.setValue('line_total', Math.round(lineTotal * 100) / 100);
         current.setValue('discount_amount', Math.round(discountAmount * 100) / 100);
         current.setValue('net_total', Math.round(netTotal * 100) / 100);
-    },
+    `,
 })
 
 BusinessRule({
+    $id: 'br-lock-invoiced-run',
     table: 'x_snc_chargeback_chargeback_run',
     name: 'Lock Invoiced Chargeback Run',
     order: 100,
     active: true,
     when: 'before',
     action: ['update'],
-    script: (current: any, previous: any) => {
-        if (previous.getValue('status') === 'invoiced' || previous.getValue('status') === 'paid') {
+    script: `
+        if (previous.status === 'invoiced' || previous.status === 'paid') {
             gs.addErrorMessage('Cannot modify a chargeback run that has been invoiced or paid');
             current.setAbortAction(true);
             return;
         }
-    },
+    `,
 })
 
 Acl({
+    $id: 'acl-customer-read',
     type: 'record',
     table: 'x_snc_chargeback_customer',
     operation: 'read',
@@ -135,6 +141,7 @@ Acl({
 })
 
 Acl({
+    $id: 'acl-customer-write',
     type: 'record',
     table: 'x_snc_chargeback_customer',
     operation: 'write',
@@ -144,6 +151,7 @@ Acl({
 })
 
 Acl({
+    $id: 'acl-customer-create',
     type: 'record',
     table: 'x_snc_chargeback_customer',
     operation: 'create',
@@ -153,6 +161,7 @@ Acl({
 })
 
 Acl({
+    $id: 'acl-customer-delete',
     type: 'record',
     table: 'x_snc_chargeback_customer',
     operation: 'delete',
@@ -162,6 +171,7 @@ Acl({
 })
 
 Acl({
+    $id: 'acl-lictype-read',
     type: 'record',
     table: 'x_snc_chargeback_license_type',
     operation: 'read',
@@ -171,6 +181,7 @@ Acl({
 })
 
 Acl({
+    $id: 'acl-lictype-write',
     type: 'record',
     table: 'x_snc_chargeback_license_type',
     operation: 'write',
@@ -180,6 +191,7 @@ Acl({
 })
 
 Acl({
+    $id: 'acl-lictype-create',
     type: 'record',
     table: 'x_snc_chargeback_license_type',
     operation: 'create',
@@ -189,6 +201,7 @@ Acl({
 })
 
 Acl({
+    $id: 'acl-lictype-delete',
     type: 'record',
     table: 'x_snc_chargeback_license_type',
     operation: 'delete',
@@ -198,6 +211,7 @@ Acl({
 })
 
 Acl({
+    $id: 'acl-ratecard-read',
     type: 'record',
     table: 'x_snc_chargeback_rate_card',
     operation: 'read',
@@ -207,6 +221,7 @@ Acl({
 })
 
 Acl({
+    $id: 'acl-ratecard-write',
     type: 'record',
     table: 'x_snc_chargeback_rate_card',
     operation: 'write',
@@ -216,6 +231,7 @@ Acl({
 })
 
 Acl({
+    $id: 'acl-ratecard-create',
     type: 'record',
     table: 'x_snc_chargeback_rate_card',
     operation: 'create',
@@ -225,6 +241,7 @@ Acl({
 })
 
 Acl({
+    $id: 'acl-ratecard-delete',
     type: 'record',
     table: 'x_snc_chargeback_rate_card',
     operation: 'delete',
@@ -234,6 +251,7 @@ Acl({
 })
 
 Acl({
+    $id: 'acl-licalloc-read',
     type: 'record',
     table: 'x_snc_chargeback_license_allocation',
     operation: 'read',
@@ -243,6 +261,7 @@ Acl({
 })
 
 Acl({
+    $id: 'acl-licalloc-write',
     type: 'record',
     table: 'x_snc_chargeback_license_allocation',
     operation: 'write',
@@ -252,6 +271,7 @@ Acl({
 })
 
 Acl({
+    $id: 'acl-licalloc-create',
     type: 'record',
     table: 'x_snc_chargeback_license_allocation',
     operation: 'create',
@@ -261,6 +281,7 @@ Acl({
 })
 
 Acl({
+    $id: 'acl-licalloc-delete',
     type: 'record',
     table: 'x_snc_chargeback_license_allocation',
     operation: 'delete',
@@ -270,6 +291,7 @@ Acl({
 })
 
 Acl({
+    $id: 'acl-cbrun-read',
     type: 'record',
     table: 'x_snc_chargeback_chargeback_run',
     operation: 'read',
@@ -279,6 +301,7 @@ Acl({
 })
 
 Acl({
+    $id: 'acl-cbrun-write',
     type: 'record',
     table: 'x_snc_chargeback_chargeback_run',
     operation: 'write',
@@ -288,6 +311,7 @@ Acl({
 })
 
 Acl({
+    $id: 'acl-cbrun-create',
     type: 'record',
     table: 'x_snc_chargeback_chargeback_run',
     operation: 'create',
@@ -297,6 +321,7 @@ Acl({
 })
 
 Acl({
+    $id: 'acl-cbrun-delete',
     type: 'record',
     table: 'x_snc_chargeback_chargeback_run',
     operation: 'delete',
@@ -306,6 +331,7 @@ Acl({
 })
 
 Acl({
+    $id: 'acl-invline-read',
     type: 'record',
     table: 'x_snc_chargeback_invoice_line',
     operation: 'read',
@@ -315,6 +341,7 @@ Acl({
 })
 
 Acl({
+    $id: 'acl-invline-write',
     type: 'record',
     table: 'x_snc_chargeback_invoice_line',
     operation: 'write',
@@ -324,6 +351,7 @@ Acl({
 })
 
 Acl({
+    $id: 'acl-invline-create',
     type: 'record',
     table: 'x_snc_chargeback_invoice_line',
     operation: 'create',
@@ -333,6 +361,7 @@ Acl({
 })
 
 Acl({
+    $id: 'acl-invline-delete',
     type: 'record',
     table: 'x_snc_chargeback_invoice_line',
     operation: 'delete',
@@ -342,6 +371,7 @@ Acl({
 })
 
 Acl({
+    $id: 'acl-onboard-read',
     type: 'record',
     table: 'x_snc_chargeback_onboarding_request',
     operation: 'read',
@@ -351,6 +381,7 @@ Acl({
 })
 
 Acl({
+    $id: 'acl-onboard-write',
     type: 'record',
     table: 'x_snc_chargeback_onboarding_request',
     operation: 'write',
@@ -360,6 +391,7 @@ Acl({
 })
 
 Acl({
+    $id: 'acl-onboard-create',
     type: 'record',
     table: 'x_snc_chargeback_onboarding_request',
     operation: 'create',
@@ -369,6 +401,7 @@ Acl({
 })
 
 Acl({
+    $id: 'acl-onboard-delete',
     type: 'record',
     table: 'x_snc_chargeback_onboarding_request',
     operation: 'delete',

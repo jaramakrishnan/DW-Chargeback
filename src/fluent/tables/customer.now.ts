@@ -1,6 +1,6 @@
-import { Table, StringColumn, ChoiceColumn, DateColumn, ReferenceColumn, EmailColumn, PhoneColumn, IntegerColumn, BooleanColumn } from '@servicenow/sdk/core'
+import { Table, StringColumn, ChoiceColumn, DateColumn, ReferenceColumn, EmailColumn, IntegerColumn, BooleanColumn } from '@servicenow/sdk/core'
 
-Table({
+export const x_snc_chargeback_customer = Table({
     name: 'x_snc_chargeback_customer',
     label: 'Customer',
     display: 'name',
@@ -23,7 +23,7 @@ Table({
         primary_contact: ReferenceColumn({ label: 'Primary Contact', referenceTable: 'sys_user' }),
         billing_contact: ReferenceColumn({ label: 'Billing Contact', referenceTable: 'sys_user' }),
         contact_email: EmailColumn({ label: 'Contact Email', maxLength: 200 }),
-        contact_phone: PhoneColumn({ label: 'Contact Phone', maxLength: 30 }),
+        contact_phone: StringColumn({ label: 'Contact Phone', maxLength: 30 }),
         contract_start_date: DateColumn({ label: 'Contract Start Date' }),
         contract_end_date: DateColumn({ label: 'Contract End Date' }),
         billing_cycle: ChoiceColumn({

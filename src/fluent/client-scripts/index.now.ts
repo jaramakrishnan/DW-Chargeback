@@ -2,6 +2,7 @@ import { ClientScript } from '@servicenow/sdk/core'
 import '@servicenow/sdk/global'
 
 ClientScript({
+    $id: 'cs-validate-email',
     table: 'x_snc_chargeback_onboarding_request',
     name: 'Validate Email on Onboarding Request',
     type: 'onSubmit',
@@ -12,6 +13,7 @@ ClientScript({
 })
 
 ClientScript({
+    $id: 'cs-validate-alloc',
     table: 'x_snc_chargeback_license_allocation',
     name: 'Validate Allocation Count',
     type: 'onChange',
@@ -23,6 +25,7 @@ ClientScript({
 })
 
 ClientScript({
+    $id: 'cs-autoname-ratecard',
     table: 'x_snc_chargeback_rate_card',
     name: 'Auto-generate Rate Card Name',
     type: 'onChange',
@@ -34,6 +37,7 @@ ClientScript({
 })
 
 ClientScript({
+    $id: 'cs-confirm-status',
     table: 'x_snc_chargeback_chargeback_run',
     name: 'Confirm Before Status Change',
     type: 'onChange',

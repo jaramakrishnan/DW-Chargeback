@@ -1,6 +1,6 @@
 import { Table, StringColumn, ChoiceColumn, DateColumn, ReferenceColumn, EmailColumn, IntegerColumn, JsonColumn } from '@servicenow/sdk/core'
 
-Table({
+export const x_snc_chargeback_onboarding_request = Table({
     name: 'x_snc_chargeback_onboarding_request',
     label: 'Onboarding Request',
     display: 'name',

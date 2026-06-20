@@ -1,6 +1,6 @@
 import { Table, StringColumn, ReferenceColumn, IntegerColumn, DateColumn, ChoiceColumn } from '@servicenow/sdk/core'
 
-Table({
+export const x_snc_chargeback_license_allocation = Table({
     name: 'x_snc_chargeback_license_allocation',
     label: 'License Allocation',
     display: 'name',

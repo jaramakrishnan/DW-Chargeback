@@ -1,6 +1,6 @@
-import { Table, StringColumn, ReferenceColumn, DecimalColumn, IntegerColumn, ChoiceColumn } from '@servicenow/sdk/core'
+import { Table, StringColumn, ReferenceColumn, DecimalColumn, IntegerColumn } from '@servicenow/sdk/core'
 
-Table({
+export const x_snc_chargeback_invoice_line = Table({
     name: 'x_snc_chargeback_invoice_line',
     label: 'Invoice Line',
     display: 'name',

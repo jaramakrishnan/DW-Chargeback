@@ -1,6 +1,6 @@
 import { Table, StringColumn, ChoiceColumn, BooleanColumn, IntegerColumn, DecimalColumn } from '@servicenow/sdk/core'
 
-Table({
+export const x_snc_chargeback_license_type = Table({
     name: 'x_snc_chargeback_license_type',
     label: 'License Type',
     display: 'name',
