@@ -181,6 +181,34 @@ declare global {
                         table: 'sys_scope_privilege'
                         id: '6007baa665a54b50bbefd3e4134bf933'
                     }
+                    'mod-chargeback-runs': {
+                        table: 'sys_app_module'
+                        id: 'bd1b1ac54e3d4d6f9a2736746c66588e'
+                    }
+                    'mod-customers': {
+                        table: 'sys_app_module'
+                        id: 'fa863e76d54d4f6faa028023be433295'
+                    }
+                    'mod-invoices': {
+                        table: 'sys_app_module'
+                        id: '8adecbdd2bf646d39a191efd34ab51b2'
+                    }
+                    'mod-license-allocations': {
+                        table: 'sys_app_module'
+                        id: 'defa69ecc6a74fc09823f7b0c0a43f0d'
+                    }
+                    'mod-license-types': {
+                        table: 'sys_app_module'
+                        id: 'ca62a892781440159f19dbbbd623da28'
+                    }
+                    'mod-onboarding': {
+                        table: 'sys_app_module'
+                        id: '8965fa995dc24f6c8a09f96cd2c4cc1b'
+                    }
+                    'mod-rate-cards': {
+                        table: 'sys_app_module'
+                        id: 'e69d062b7c8f4dfaa52298f252939bee'
+                    }
                     package_json: {
                         table: 'sys_module'
                         id: '4e5447adc5eb46ed879d53953f2b94a5'

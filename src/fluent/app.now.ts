@@ -1,4 +1,4 @@
-import { ApplicationMenu, Role, Property, CrossScopePrivilege } from '@servicenow/sdk/core'
+import { ApplicationMenu, Role, Property, CrossScopePrivilege, Record } from '@servicenow/sdk/core'
 import '@servicenow/sdk/global'
 
 Role({
@@ -61,12 +61,103 @@ Property({
     description: 'Email address for chargeback notifications',
 })
 
-ApplicationMenu({
+const appMenu = ApplicationMenu({
     $id: 'app-menu',
     title: 'DW Chargeback',
     roles: ['x_snc_chargeback.admin', 'x_snc_chargeback.billing_manager', 'x_snc_chargeback.analyst', 'x_snc_chargeback.onboarding_specialist'],
     order: 100,
     active: true,
+})
+
+Record({
+    $id: 'mod-customers',
+    table: 'sys_app_module',
+    data: {
+        title: 'Customers',
+        application: appMenu,
+        link_type: 'LIST',
+        name: 'x_snc_chargeback_customer',
+        active: true,
+        order: 100,
+    },
+})
+
+Record({
+    $id: 'mod-rate-cards',
+    table: 'sys_app_module',
+    data: {
+        title: 'Rate Cards',
+        application: appMenu,
+        link_type: 'LIST',
+        name: 'x_snc_chargeback_rate_card',
+        active: true,
+        order: 200,
+    },
+})
+
+Record({
+    $id: 'mod-license-types',
+    table: 'sys_app_module',
+    data: {
+        title: 'License Types',
+        application: appMenu,
+        link_type: 'LIST',
+        name: 'x_snc_chargeback_license_type',
+        active: true,
+        order: 300,
+    },
+})
+
+Record({
+    $id: 'mod-license-allocations',
+    table: 'sys_app_module',
+    data: {
+        title: 'License Allocations',
+        application: appMenu,
+        link_type: 'LIST',
+        name: 'x_snc_chargeback_license_allocation',
+        active: true,
+        order: 400,
+    },
+})
+
+Record({
+    $id: 'mod-chargeback-runs',
+    table: 'sys_app_module',
+    data: {
+        title: 'Chargeback Runs',
+        application: appMenu,
+        link_type: 'LIST',
+        name: 'x_snc_chargeback_chargeback_run',
+        active: true,
+        order: 500,
+    },
+})
+
+Record({
+    $id: 'mod-invoices',
+    table: 'sys_app_module',
+    data: {
+        title: 'Invoice Lines',
+        application: appMenu,
+        link_type: 'LIST',
+        name: 'x_snc_chargeback_invoice_line',
+        active: true,
+        order: 600,
+    },
+})
+
+Record({
+    $id: 'mod-onboarding',
+    table: 'sys_app_module',
+    data: {
+        title: 'Onboarding Requests',
+        application: appMenu,
+        link_type: 'LIST',
+        name: 'x_snc_chargeback_onboarding_request',
+        active: true,
+        order: 700,
+    },
 })
 
 CrossScopePrivilege({
