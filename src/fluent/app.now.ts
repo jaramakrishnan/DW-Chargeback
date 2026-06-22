@@ -121,6 +121,19 @@ Record({
     },
 })
 
+Record({
+    $id: 'mod-chargeback-results',
+    table: 'sys_app_module',
+    data: {
+        title: 'Chargeback Results',
+        application: appMenu,
+        link_type: 'LIST',
+        name: 'x_snc_chargeback_chargeback_result',
+        active: true,
+        order: 500,
+    },
+})
+
 CrossScopePrivilege({
     $id: 'csp-sys-user',
     targetScope: 'global',
