@@ -24,7 +24,7 @@ jobs:
         run: npx now-sdk install
         env:
           SN_SDK_NODE_ENV: SN_SDK_CI_INSTALL
-          SN_SDK_AUTH_TYPE: basic
+          SN_SDK_AUTH_TYPE: oauth
           SN_SDK_INSTANCE_URL: ${{ secrets.SN_INSTANCE_URL }}
-          SN_SDK_USER: ${{ secrets.SN_USER }}
-          SN_SDK_USER_PWD: ${{ secrets.SN_PASSWORD }}
+          SN_SDK_OAUTH_CLIENT_ID: ${{ secrets.SN_OAUTH_CLIENT_ID }}
+          SN_SDK_OAUTH_CLIENT_SECRET: ${{ secrets.SN_OAUTH_CLIENT_SECRET }}
